@@ -1,4 +1,3 @@
-/* eslint-disable object-curly-spacing */
 <template>
   <div class="container mx-auto flex flex-col items-center bg-gray-100 p-4">
     <div class="container">
@@ -7,7 +6,7 @@
         <div class="flex">
           <div class="max-w-xs">
             <label for="wallet" class="block text-sm font-medium text-gray-700"
-              >Тикер</label
+              >Тикер {{ ticker }}</label
             >
             <div class="mt-1 relative rounded-md shadow-md">
               <input
@@ -132,7 +131,7 @@ export default {
 
   data () {
     return {
-      ticker: 'default',
+      ticker: 'default11',
       tickers: [
         { name: 'DEMO1', price: '-' },
         { name: 'DEMO2', price: '2' },
@@ -140,18 +139,15 @@ export default {
       ]
     }
   },
-
   methods: {
     add () {
       const newTicker = {
         name: this.ticker,
         price: '-'
       }
-
       this.tickers.push(newTicker)
       this.ticker = ''
     },
-
     handleDelete (tickerToRemove) {
       this.tickers = this.tickers.filter((t) => t !== tickerToRemove)
     }
