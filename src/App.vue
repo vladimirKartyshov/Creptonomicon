@@ -94,7 +94,7 @@
           <div
             v-for="(bar, idx) in normalizeGraph()"
             :key="idx"
-            :style="{height: `${bar}%`}"
+            :style="{ height: `${bar}%` }"
             class="bg-purple-800 border w-10"
           ></div>
         </div>
@@ -177,11 +177,9 @@ export default {
       const maxValue = Math.max(...this.graph)
       const minValue = Math.min(...this.graph)
       return this.graph.map(
-        price => 5 + ((price - minValue) * 95) / (maxValue - minValue)
+        (price) => 5 + ((price - minValue) * 95) / (maxValue - minValue)
       )
     }
   }
 }
 </script>
-
-<style src="./app.css"></style>
